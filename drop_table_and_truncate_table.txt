@@ -1,0 +1,6 @@
+/* DROP AND TRUNCATE TABLE */
+TRUNCATE TABLE empregado;
+DROP TABLE empregado;
+
+
+
