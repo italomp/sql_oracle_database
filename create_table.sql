@@ -14,9 +14,8 @@ inserida e não haverá erro de integridade referencial.
 IMPORTANTE: Esse não é um script para criação de mulltiplas tabelas.
 Tive que criar uma a uma.
 
-Mais cláusulas que pode ser usadas na definição de uma tabela:
-NOT NULL e UNIQUE
-    
+Mais conceitos que poderiam ser usados da definição das tabelas:
+1 - definir se uma coluna NOT NULL ou UNIQUE;
 */
 
 CREATE TABLE Projeto(
@@ -31,6 +30,7 @@ CREATE TABLE Empregado(
     cod_proj NUMBER(5,0),
     CONSTRAINT pk PRIMARY KEY(cpf),
     CONSTRAINT fk FOREIGN KEY(cod_proj) REFERENCES Projeto(codigo)
+    ON DELETE CASCADE 
     INITIALLY DEFERRED DEFERRABLE,
     CONSTRAINT salario_minimo CHECK(salario >= 1000) 
 )
