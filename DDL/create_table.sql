@@ -1,4 +1,6 @@
 /*
+SCRIPT DE CRIAÇÃO DE TABELAS
+
 Comentarios para fins de estudo.
 
 Tabela criada com atributos e constraints definidos.
@@ -10,12 +12,12 @@ Isso serve para quando eu for inserir dados em massa...
 Nesse cenário a Pk de projeto (que será fk em empregado) pode não 
 ter sido inserida no banco ainda, mas até o COMMIT ela será 
 inserida e não haverá erro de integridade referencial.
-    
-IMPORTANTE: Esse não é um script para criação de mulltiplas tabelas.
-Tive que criar uma a uma.
 
 Mais conceitos que poderiam ser usados da definição das tabelas:
 1 - definir se uma coluna NOT NULL ou UNIQUE;
+
+IMPORTANTE: não confundir "executar script" com "executar instrução",
+            no sql developer
 */
 
 CREATE TABLE Projeto(
@@ -33,4 +35,4 @@ CREATE TABLE Empregado(
     ON DELETE CASCADE 
     INITIALLY DEFERRED DEFERRABLE,
     CONSTRAINT salario_minimo CHECK(salario >= 1000) 
-)
+);
